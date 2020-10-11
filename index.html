@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+    
+        <div class="App" id="app">
+            <header class="App-header">
+                <h1>ToDo Vue</h1>
+            </header>
+            <div class="form__group field">
+                <form v-on:submit.prevent="submitForm" autocomplete="off" id="form">
+                    <input type="text" class="form__field" placeholder="Task" name="name" id='name' required v-model="newtask"/>
+                    <label htmlFor="name" class="form__label">Task</label>
+                    <input class="form__submit" type="submit" value="+"/>
+                </form>
+            </div>
+            <ul id="list" v-if="elements">
+                <li  v-for="element in elements.data" v-bind:class="setDoneClass(element.done)" v-on:click="done(element._id)">
+                    <span class="text">{{element.name}}</span>
+                    <button v-on:click="remove(element._id)">x</button>
+                </li>
+            </ul>
+        </div>
+            
+        <script src="index.js"></script>
+    </body>
+</html>
