@@ -1,4 +1,6 @@
 body {
+  background-color: #373b44;
+  color: #282c34;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,21 +9,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  color: #b1b1b1;
 }
 
-body {
-  background-color: #373b44;
-  color: #282c34;
-}
-
-.App {
+.app {
   text-align: center;
 }
 
-.App-header {
+.app-header {
   border-bottom: 10px solid whitesmoke;
   margin: 5vh;
   margin-bottom: 10vh;
@@ -30,10 +26,6 @@ body {
   text-align: right;
   font-size: calc(10px + 2vmin);
   color: whitesmoke;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 ul {
@@ -101,10 +93,6 @@ li button:hover {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   transform: skewX(-20deg);
-}
-
-.Task-Done {
-  text-decoration: line-through;
 }
 
 /* ----- start ----- INPUT STYLE ----- start ----- */

@@ -32,7 +32,6 @@ const form = new Vue({
 })
 
 async function getElements() {
-  //return await axios.get('http://localhost:3001/v1/elements/');
   list.elements = await axios.get('http://localhost:3001/v1/elements/');
 }
 

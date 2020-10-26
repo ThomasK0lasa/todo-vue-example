@@ -1,13 +1,14 @@
 <html>
     <head>
+        <title>ToDo Vue</title>
         <link rel="stylesheet" href="index.css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
     
-        <div class="App" id="app">
-            <header class="App-header">
+        <div class="app" id="app">
+            <header class="app-header">
                 <h1>ToDo Vue</h1>
             </header>
             <div class="form__group field">
@@ -23,6 +24,9 @@
                     <button v-on:click="remove(element._id)">x</button>
                 </li>
             </ul>
+            <p v-else="elements">
+                Seems that You don't have any pending tasks. Use form to add new ones. :)
+            </p>
         </div>
             
         <script src="index.js"></script>
