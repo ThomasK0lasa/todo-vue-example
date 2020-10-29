@@ -2,7 +2,9 @@ const list = new Vue({
   el: '#list',
   data() {
     return {
-      elements: null
+      elements: [],
+      canConnect: true,
+      dataExists: false,
     }
   },
   methods: {
@@ -14,6 +16,10 @@ const list = new Vue({
     },
     remove: function (id) {
       removeElement(id);
+    },
+    checkElements: function (elements) {
+      checkIfDataExists(elements);
+      console.log('dsbuds')
     }
   }
 })
@@ -21,7 +27,8 @@ const list = new Vue({
 const form = new Vue({
   el: '#form',
   data: {
-    newtask: ""
+    newtask: "",
+    canConnect: true
   },
   methods: {
     submitForm() {
@@ -31,8 +38,21 @@ const form = new Vue({
   }
 })
 
-async function getElements() {
-  list.elements = await axios.get('http://localhost:3001/v1/elements/');
+let connectionStatus = true;
+
+function getElements() {
+  axios.get('http://localhost:3001/v1/elements/').then( function(res) {
+    list.elements = res;
+    if (res.hasOwnProperty("data") && res.data.length > 0) {
+      list.dataExists = true;
+    } else {
+      list.dataExists = false;
+    }
+  }).catch( function(error) {
+    list.canConnect = false;
+    list.dataExists = false;
+    form.canConnect = false;
+  });
 }
 
 function addElement(newtask) {
