@@ -2,9 +2,7 @@ body {
   background-color: #373b44;
   color: #282c34;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -36,6 +34,7 @@ ul {
 }
 
 li {
+  color: white;
   background-color: teal;
   margin: 1vh;
   position: relative;
@@ -68,7 +67,6 @@ li button:hover {
   0% {
     width: 0;
   }
-
   100% {
     width: 120%;
   }
@@ -96,6 +94,7 @@ li button:hover {
 }
 
 /* ----- start ----- INPUT STYLE ----- start ----- */
+
 .form__group {
   position: relative;
   padding: 15px 0 0;
@@ -157,8 +156,8 @@ li button:hover {
 }
 
 /* reset input */
-.form__field:required,
-.form__field:invalid {
+
+.form__field:required, .form__field:invalid {
   box-shadow: none;
 }
 
@@ -171,9 +170,7 @@ li button:hover {
   transition: all .2s ease-in-out;
 }
 
-.form__field:focus~.form__submit,
-.form__submit:hover,
-.form__submit:active {
+.form__field:focus~.form__submit, .form__submit:hover, .form__submit:active {
   cursor: pointer;
   color: #38ef7d;
 }
