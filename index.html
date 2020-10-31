@@ -15,9 +15,9 @@
         <div class="form__group field" id="form">
             <form v-on:submit.prevent="submitForm" autocomplete="off" v-if="canConnect">
                 <input type="text" class="form__field" placeholder="Task" name="name" id='name' required
-                    v-model="newtask" />
-                <label htmlFor="name" class="form__label">Task</label>
-                <input class="form__submit" type="submit" value="+" />
+                    v-model="newtask" /><!--
+                --><label for="name" class="form__label">Task</label><!--
+                --><input class="form__submit" type="submit" value="+" />
             </form>
         </div>
         <div id="list">
